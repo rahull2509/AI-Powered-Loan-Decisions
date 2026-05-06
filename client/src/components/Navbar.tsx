@@ -4,12 +4,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const location = useLocation();
 
   const toggleTheme = () => {
     setIsDark(!isDark);
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', !isDark ? 'dark' : 'light');
   };
 
   const navLinks = [
